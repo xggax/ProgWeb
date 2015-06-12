@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Página do Post</title>
+	<meta charset="utf-8">
+    <style>
+        table{ 
+            display: table;
+            border-collapse: separate;
+            border-spacing: 2px;
+            border-color: gray;
+            }
+    
+        #teste{
+            background-color:lightgray;
+            }
+    </style>
+</head>
+
+	<body>
+	
+		<table>
+            <div id="primeiro">
+                <tr>
+                    <td><p><img src="batman.jpg" alt="imagem da pessoa" width="100px" height="100px"></p></td> 
+                    <td><p><strong>BATMAN</strong></p></td> 
+                </tr>
+            </div>
+        </table>
+        <p><cite>"Ou Você Morre como Heroi, Ou Vive o bastante para se tornar o vilão.."</cite></p>
+		<table>
+            <tr>
+                <td><span id="cont">0 pessoas curtiram isso </span></td>
+                <td><button id="like" onclick="myFunction()">Like</button></td>
+            </tr>
+		</table>
+        
+        <p>Comentários</p>
+        <div>
+            <p>
+                <div id="teste"></div>
+                <textarea type="text" id="teste1" rows="4" cols="50"></textarea>
+                <button id="teste2">Comentar</button>
+            </p>
+        </div>
+        
+        <script >
+            var div = document.querySelector("div#teste");
+            var inp = document.querySelector("textarea#teste1");
+            var bt = document.querySelector("button#teste2"); 
+            bt.addEventListener ("click", function(){
+                div.innerHTML = '<pre>' + div.innerHTML + inp.value +'</pre>';
+            });
+        </script>
+        
+        
+        <script>
+            spanElems = document.innerHTML = "";
+            var valor=0;
+            function myFunction(){
+            valor= valor+1;
+            console.log(valor);
+            spanElems = document.getElementById('cont');
+                if(valor!=1)
+                {
+                    spanElems.innerHTML = valor + " pessoas curtiram isso\n";
+                }
+                else
+                {
+                    spanElems.innerHTML = valor + " pessoa curtiu isso\n";
+                }
+            }
+        </script>		
+
+	</body>
+
+</html>
